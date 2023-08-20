@@ -19,7 +19,7 @@ export default function Index() {
     }
 
     const data = async () => {
-        const get = await fetch(`http://localhost:3000/api/todo`)
+        const get = await fetch(`/api/todo`)
         setTodos(await get.json())
     }
 
@@ -37,7 +37,7 @@ export default function Index() {
 
         setError("")
         if (todo !== null || todo !== undefined) {
-            const data = await fetch(`http://localhost:3000/api/todo`, {
+            const data = await fetch(`/api/todo`, {
                 method: 'POST',
                 body: JSON.stringify(todo),
                 headers: {
@@ -59,7 +59,7 @@ export default function Index() {
 
         // console.log(editTodoValue)
         if (editTodoValue !== null || editTodoValue !== undefined) {
-            const data = await fetch(`http://localhost:3000/api/todo/${id}`, {
+            const data = await fetch(`/api/todo/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-type': 'application/json',
@@ -87,7 +87,7 @@ export default function Index() {
         }
         console.log(JSON.stringify(isCompleted))
 
-        const data = await fetch(`http://localhost:3000/api/todo/${id}`, {
+        const data = await fetch(`/api/todo/${id}`, {
             method: 'PATCH',
             headers: {
                 'Content-type': 'application/json',
@@ -100,7 +100,7 @@ export default function Index() {
     const deleteTodo = async (id, e) => {
         e.preventDefault()
 
-        const data = await fetch(`http://localhost:3000/api/todo/${id}`, {
+        const data = await fetch(`/api/todo/${id}`, {
             method: 'DELETE',
         })
         console.log(await data.json())

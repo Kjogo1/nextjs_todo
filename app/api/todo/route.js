@@ -6,7 +6,7 @@ import { db } from '@/firebase'
 export async function GET() {
 
   try {
-    const todo: {}[] = []
+    const todo= []
 
     const querySnapshot = await getDocs(collection(db, "todos"));
     querySnapshot.forEach((doc) => {
@@ -26,13 +26,13 @@ export async function GET() {
 };
 
 // create a new todo api
-export async function POST(req: Request, res: Response) {
+export async function POST(req, res) {
   const todo = await req.json();
 
   if (!todo) return NextResponse.json({ response: "failed", message: "Todo is required" })
 
   try {
-    const check: {}[] = []
+    const check = []
 
     const collectionRef = collection(db, "todos")
 

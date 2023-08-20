@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/todo/page.jsx", "app/api/todo/route.ts"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/todo/page.jsx", "app/api/todo/route.js", "app/api/todo/[id]/route.js"],
   "exclude": ["node_modules"]
 }

@@ -3,7 +3,7 @@ import { collection, deleteDoc, doc, getDoc, getDocs, serverTimestamp, updateDoc
 import { NextResponse } from "next/server";
 
 // update todo completed api
-export async function PATCH(req: Request, res: Response) {
+export async function PATCH(req, res) {
 
     const id = req.url.slice(req.url.lastIndexOf('/') + 1);
     const isCompleted = await req.json();
@@ -31,7 +31,7 @@ export async function PATCH(req: Request, res: Response) {
 }
 
 // update todo api
-export async function PUT(req: Request, res: Response) {
+export async function PUT(req, res) {
 
     const id = req.url.slice(req.url.lastIndexOf('/') + 1);
     const todo = await req.json();
@@ -39,7 +39,7 @@ export async function PUT(req: Request, res: Response) {
     // console.log(todo)
     try {
         const collectionRef = collection(db, "todos")
-        const check: {}[] = []
+        const check = []
 
         const querySnapshot = await getDocs(collectionRef);
         querySnapshot.forEach(async (doc) => {
@@ -84,7 +84,7 @@ export async function PUT(req: Request, res: Response) {
 
 }
 // delete todo api
-export async function DELETE(req: Request, res: Response) {
+export async function DELETE(req, res) {
     const id = req.url.slice(req.url.lastIndexOf('/') + 1)
 
     try {

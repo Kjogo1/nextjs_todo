@@ -1,0 +1,26 @@
+.showButton {
+    display: none;
+}
+
+div tbody tr.hoverShow:hover .showButton{
+    display: block;
+}
+
+.hoverHidden{
+    display: none;
+}
+
+div tbody tr td.hoverTd:hover .hoverHidden {
+    display: inline-block;
+}
+
+div tbody tr td.hoverTd:hover .hoverSpan {
+    display: none;
+}
+/* div tbody tr td.tdShow:hover .showButton{
+    display: block;
+} */
+
+/* .hoverShow:hover {
+    background-color: blue;
+} */
